@@ -46,9 +46,9 @@ public class Program {
                             result = sc.nextLine();
 
                             if (Objects.equals(result, "1")) {
-                                e.entradaCarro(placa, modelo, marca, horaEntrada); //metodos da classe Estacionamento
+                                e.entradaCarro(placa, e.checkModelo(modelo), marca, horaEntrada); //metodos da classe Estacionamento
                             } else if (Objects.equals(result, "2")) {
-                                e.entradaMoto(placa, modelo, marca, horaEntrada);
+                                e.entradaMoto(placa, e.checkModelo(modelo), marca, horaEntrada);
                             } else result = null;
                         }
                         System.out.println("Veículo guardado!");

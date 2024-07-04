@@ -41,6 +41,9 @@ public class Estacionamento implements OperacoesVeiculo {
                 veiculoRet = veic;
             }
         }
+        if (Objects.equals(placa, "")){
+            a = true;
+        }
         return a;
     }
 
@@ -63,4 +66,10 @@ public class Estacionamento implements OperacoesVeiculo {
         }
     }
 
+    public String checkModelo(String modelo) {
+        if (Objects.equals(modelo, "")){
+            modelo = "Modelo Desconhecido";
+        }
+        return modelo;
+    }
 }
