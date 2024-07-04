@@ -24,7 +24,7 @@ public class Estacionamento extends Veiculo implements OperacoesVeiculo {
 
     @Override
     public void saidaVeiculo(LocalDateTime horaSaida, String retirarPlaca) {
-        Duration qtdTempo = Duration.between(horaSaida, veiculoRet.getHoraEntrada());
+        Duration qtdTempo = Duration.between(veiculoRet.getHoraEntrada(), horaSaida);
         long qtdTempoHoras = qtdTempo.toHours();
 
         veiculos.removeIf(veiculoRet -> Objects.equals(veiculoRet.getPlaca(), retirarPlaca));
