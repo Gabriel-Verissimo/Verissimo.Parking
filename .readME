@@ -20,7 +20,8 @@ receber um veículo, e a cada hora passada esse valor cresce numa razão linear 
 * Não é possivel cadastrar dois veículos com placas identicas.
 * Só é possivel encerrar o período de permanência do veículo através de seu identificador único (placa).
 * O valor para carro ou moto são os mesmos.
-* Ao ser encerrado o período de permanência, Será o sistema fará o calculo do valor que deverá ser cobrado do cliente
+* Ao ser encerrado o período de permanência, o sistema fará o calculo do valor que deverá ser cobrado do cliente
 com base no tempo de permanência.
+* Não é possivel iniciar um veiculo com placa vazia.
 
 
