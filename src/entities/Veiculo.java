@@ -1,10 +1,16 @@
 package entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 public abstract class Veiculo {
-    String placa, modelo, marca, cor;
-    LocalDateTime horaEntrada, horaSaida;
+    String placa;
+    String modelo;
+    String marca;
+    LocalDateTime horaEntrada;
+    private LocalDateTime horaSaida;
+    private final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     public String getPlaca() {
         return placa;
@@ -18,9 +24,6 @@ public abstract class Veiculo {
         return marca;
     }
 
-    public String getCor() {
-        return cor;
-    }
 
     public LocalDateTime getHoraEntrada() {
         return horaEntrada;
@@ -33,8 +36,8 @@ public abstract class Veiculo {
     @Override
     public String toString() {
         return modelo.toUpperCase() +
-                " placa: " + placa +
-                ", horaEntrada: " + horaEntrada +
-                " .";
+                ". Placa: " + placa +
+                ". Hora de Entrada: " + horaEntrada.format(fmt) +
+                ".";
     }
 }
