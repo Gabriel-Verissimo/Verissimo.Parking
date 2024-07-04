@@ -20,10 +20,10 @@ public class Program {
 
         while (!Objects.equals(input, "0")) {
             try {
-                UI.clearScreen();
                 switch (input) {
 
                     case "1":
+                        UI.clearScreen();
                         UI.printCase1();
                         System.out.println("Digite a placa do veículo: ");
                         String placa = sc.nextLine().toUpperCase();
@@ -55,6 +55,7 @@ public class Program {
                         break;
 
                     case "2":
+                        UI.clearScreen();
                         UI.printCase2();
                         System.out.println("Digite a placa do veiculo a ser retirado: ");
                         String retirarPlaca = sc.nextLine().toUpperCase();
@@ -66,11 +67,13 @@ public class Program {
                         break;
 
                     case "3":
+                        UI.clearScreen();
                         UI.printCase3();
                         e.showVeiculos();
                         break;
 
                     case "4":
+                        UI.clearScreen();
                         System.out.println("Digite a placa do veiculo a ser consultado: ");
                         String consultPlaca = sc.nextLine().toUpperCase();
 
@@ -81,6 +84,7 @@ public class Program {
                         break;
 
                     case "0":
+                        UI.clearScreen();
                         break;
 
                     default:
