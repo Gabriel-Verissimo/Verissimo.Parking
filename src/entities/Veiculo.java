@@ -5,12 +5,18 @@ import java.time.format.DateTimeFormatter;
 
 
 public abstract class Veiculo {
-    String placa;
-    String modelo;
-    String marca;
-    LocalDateTime horaEntrada;
-    private LocalDateTime horaSaida;
+    protected String placa;
+    protected String modelo;
+    protected String marca;
+    protected LocalDateTime horaEntrada;
     private final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    public Veiculo(String placa, String modelo, String marca) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.horaEntrada = LocalDateTime.now();
+    }
 
     public String getPlaca() {
         return placa;
@@ -29,15 +35,14 @@ public abstract class Veiculo {
         return horaEntrada;
     }
 
-    public LocalDateTime getHoraSaida() {
-        return horaSaida;
-    }
 
     @Override
     public String toString() {
-        return modelo.toUpperCase() +
-                ". Placa: " + placa +
-                ". Hora de Entrada: " + horaEntrada.format(fmt) +
+        return getMarca() +
+                " " +
+                getModelo().toUpperCase() +
+                ". Placa: " + getPlaca() +
+                ". Hora de Entrada: " + getHoraEntrada().format(fmt) +
                 ".";
     }
 }

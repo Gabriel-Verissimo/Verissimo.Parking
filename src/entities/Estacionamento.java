@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Estacionamento extends Veiculo implements OperacoesVeiculo {
+public class Estacionamento implements OperacoesVeiculo {
     protected List<Veiculo> veiculos = new ArrayList<>();
     Veiculo veiculoRet;
     final double VALORHORA = 7.00;
@@ -14,16 +14,17 @@ public class Estacionamento extends Veiculo implements OperacoesVeiculo {
 
     @Override
     public void entradaCarro(String placa, String modelo, String marca, LocalDateTime horaEntrada) {
-        veiculos.add(new Carro(placa, modelo, marca, horaEntrada));
+        veiculos.add(new Carro(placa, modelo, marca));
     }
 
     @Override
     public void entradaMoto(String placa, String modelo, String marca, LocalDateTime horaEntrada) {
-        veiculos.add(new Moto(placa, modelo, marca, horaEntrada));
+        veiculos.add(new Moto(placa, modelo, marca));
     }
 
     @Override
     public void saidaVeiculo(LocalDateTime horaSaida, String retirarPlaca) {
+
         Duration qtdTempo = Duration.between(veiculoRet.getHoraEntrada(), horaSaida);
         long qtdTempoHoras = qtdTempo.toHours();
 

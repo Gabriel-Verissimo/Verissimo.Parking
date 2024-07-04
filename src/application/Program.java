@@ -98,7 +98,6 @@ public class Program {
             input = sc.nextLine();
         }
 
-
         sc.close();
     }
 }
